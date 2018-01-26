@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>AbstractJavaFxApplicationSupport.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">backend</a> &gt; <a href="index.source.html" class="el_package">codex</a> &gt; <span class="el_source">AbstractJavaFxApplicationSupport.java</span></div><h1>AbstractJavaFxApplicationSupport.java</h1><pre class="source lang-java linenums">package codex;
+
+import javafx.application.Application;
+import org.springframework.boot.SpringApplication;
+import org.springframework.context.ConfigurableApplicationContext;
+
+
+<span class="fc" id="L8">public abstract class AbstractJavaFxApplicationSupport extends Application {</span>
+    private static String[] savedArgs;
+
+    private ConfigurableApplicationContext applicationContext;
+
+    @Override
+    public void init() {
+<span class="nc" id="L15">        applicationContext = SpringApplication.run(getClass(), savedArgs);</span>
+<span class="nc" id="L16">        applicationContext.getAutowireCapableBeanFactory().autowireBean(this);</span>
+<span class="nc" id="L17">    }</span>
+
+    @Override
+    public void stop() throws Exception {
+
+<span class="nc" id="L22">        super.stop();</span>
+<span class="nc" id="L23">        applicationContext.close();</span>
+<span class="nc" id="L24">    }</span>
+
+    static void launchApp(Class&lt;? extends AbstractJavaFxApplicationSupport&gt; appClass, String[] args) {
+
+<span class="nc" id="L28">        AbstractJavaFxApplicationSupport.savedArgs = args;</span>
+<span class="nc" id="L29">        Application.launch(appClass, args);</span>
+<span class="nc" id="L30">    }</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.7.9.201702052155</span></div></body></html>

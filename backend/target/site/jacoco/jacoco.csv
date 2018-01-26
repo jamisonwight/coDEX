@@ -1,0 +1,7 @@
+GROUP,PACKAGE,CLASS,INSTRUCTION_MISSED,INSTRUCTION_COVERED,BRANCH_MISSED,BRANCH_COVERED,LINE_MISSED,LINE_COVERED,COMPLEXITY_MISSED,COMPLEXITY_COVERED,METHOD_MISSED,METHOD_COVERED
+backend,codex.controller,BackendController,0,44,0,0,0,9,0,5,0,5
+backend,codex.domain,User,0,54,0,0,0,16,0,9,0,9
+backend,codex,App.new WebMvcConfigurerAdapter() {...},0,18,0,0,0,3,0,2,0,2
+backend,codex,App.new ChangeListener() {...},22,0,2,0,4,0,3,0,2,0
+backend,codex,AbstractJavaFxApplicationSupport,24,3,0,0,9,1,3,1,3,1
+backend,codex,App,57,8,0,0,16,2,2,2,2,2
