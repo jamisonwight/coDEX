@@ -10,7 +10,10 @@
     "build": "node build/build.js"
   },
   "dependencies": {
+    "simplebar": "^2.5.1",
+    "smooth-scrollbar": "^8.2.5",
     "vue": "^2.5.2",
+    "vue-click-outside": "^1.0.7",
     "vue-monaco-editor": "0.0.19",
     "vue-router": "^3.0.1",
     "vuex": "^3.0.1"

@@ -18,7 +18,6 @@ html,body {
   height:100%;
 }
 body {
-  background: #272727;
 }
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
